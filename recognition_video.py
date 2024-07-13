@@ -41,8 +41,7 @@ while True:
 	# detect the (x, y) coordinates of the bounding boxes
 	# corresponding to each face in the input frame
     # compute the facial embeddings for each face
-	boxes = face_recognition.face_locations(rgb,
-		model=args["detection_method"])
+	boxes = face_recognition.face_locations(rgb, model=args["detection_method"])
 	encodings = face_recognition.face_encodings(rgb, boxes)
  
     # initialise the list of names
@@ -90,7 +89,7 @@ while True:
 			# draw the predicted face name on the image
 			cv2.rectangle(frame, (left, top), (right, bottom), (0, 255, 0), 2)
 			y = top - 15 if top - 15 > 15 else top + 15
-			cv2.putText(frame, name, (left, y), cv2.FONT_HERSHEY_SIMPLEX, 0.75, (0, 255, 0), 2)
+			cv2.putText(frame, name, (left, y), cv2.FONT_HERSHEY_DUPLEX, 0.75, (0, 255, 0), 2)
  
 			# if the video writer is none and 
    			# we are supposed to write video to disk
